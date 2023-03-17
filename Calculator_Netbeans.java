@@ -34,89 +34,94 @@ public class Calculator_Netbeans {
             System.out.print("4. Bagi (÷) ");
             System.out.print("5. Hasil (=) ");
             System.out.println("6. Keluar ");
-            System.out.print("Masukkan pilihan : ");
-            pilihan = input.nextInt();                               
-            switch(pilihan){
-                case 1:
-                operasi[i] = '+';
-                break;
-                case 2:
-                operasi[i] = '-';
-                break;
-                case 3:
-                operasi[i] = 'x';
-                break;
-                case 4:
-                operasi[i] = '÷';
-                break;
-                case 5:
-                for (int check = 0; check <= i; check++){
-                    if (operasi[check] == '÷'){
-                        angka[check] = angka[check]/angka[check+1];
-                        angka[check+1] = 0;
-                        if (operasi[check+1] == 'x' || operasi[check+1] == '÷'){
-                            angka[check+1] = angka[check];
-                            angka[check] = 0;
-                            operasi[check] = '+';
-                        }
-                        else{
-                            operasi[check] = '+';
-                        }
-                    }
-                    if (operasi[check] == 'x'){
-                        angka[check] = angka[check] * angka[check+1];
-                        angka[check+1] = 0;
-                        if (operasi[check+1] == 'x' || operasi[check+1] == '÷'){
-                            angka[check+1] = angka[check];
-                            angka[check] = 0;
-                            operasi[check] = '+';
-                        }
-                        else{
-                            operasi[check] = '+';
-                        }                    
-                    }                                        
-                }
-                for (int check = 0; check <= i; check++){
-                    if(operasi[check] == '+'){
-                        hasil = angka[check] + angka[check+1];
-                        angka[check] = 0;
-                        angka[check+1] = hasil;
-                    }
-                    if(operasi[check] == '-'){
-                        hasil = angka[check] - angka[check+1];
-                        angka[check] = 0;
-                        angka[check+1] = hasil;
-                    }
-                    if(check == i){                  
-                        System.out.println("hasil = " + angka[check]);
-                        for(int clear = 0; clear <= i; clear++){
-                            angka[clear] = 0;
-                            operasi[clear] = 0;
-                        }                                                   
-                        while(true){
-                            System.out.print("lanjut? (y/n) : ");    
-                            pilihan_2 = input_2.next().charAt(0); 
-                            if(pilihan_2 == 'n'){
-                                pilihan = 6;
-                                break;
-                            }
-                            if(pilihan_2 == 'y'){
-                                System.out.print("Memulai Program Kembali\n");
-                                i = -1;
-                                break;
+            while(true){
+                System.out.print("Masukkan pilihan : ");
+                pilihan = input.nextInt();                               
+                switch(pilihan){
+                    case 1:
+                    operasi[i] = '+';
+                    break;
+                    case 2:
+                    operasi[i] = '-';
+                    break;
+                    case 3:
+                    operasi[i] = 'x';
+                    break;
+                    case 4:
+                    operasi[i] = '÷';
+                    break;
+                    case 5:
+                    for (int check = 0; check <= i; check++){
+                        if (operasi[check] == '÷'){
+                            angka[check] = angka[check]/angka[check+1];
+                            angka[check+1] = 0;
+                            if (operasi[check+1] == 'x' || operasi[check+1] == '÷'){
+                                angka[check+1] = angka[check];
+                                angka[check] = 0;
+                                operasi[check] = '+';
                             }
                             else{
-                                System.out.println("Pilihan invalid coba lagi");
+                                operasi[check] = '+';
                             }
+                        }
+                        if (operasi[check] == 'x'){
+                            angka[check] = angka[check] * angka[check+1];
+                            angka[check+1] = 0;
+                            if (operasi[check+1] == 'x' || operasi[check+1] == '÷'){
+                                angka[check+1] = angka[check];
+                                angka[check] = 0;
+                                operasi[check] = '+';
+                            }
+                            else{
+                                operasi[check] = '+';
+                            }                    
                         }                                        
                     }
+                    for (int check = 0; check <= i; check++){
+                        if(operasi[check] == '+'){
+                            hasil = angka[check] + angka[check+1];
+                            angka[check] = 0;
+                            angka[check+1] = hasil;
+                        }
+                        if(operasi[check] == '-'){
+                            hasil = angka[check] - angka[check+1];
+                            angka[check] = 0;
+                            angka[check+1] = hasil;
+                        }
+                        if(check == i){                  
+                            System.out.println("hasil = " + angka[check]);
+                            for(int clear = 0; clear <= i; clear++){
+                                angka[clear] = 0;
+                                operasi[clear] = 0;
+                            }                                                   
+                            while(true){
+                                System.out.print("lanjut? (y/n) : ");    
+                                pilihan_2 = input_2.next().charAt(0); 
+                                if(pilihan_2 == 'n'){
+                                    pilihan = 6;
+                                    break;
+                                }
+                                if(pilihan_2 == 'y'){
+                                    System.out.print("Memulai Program Kembali\n");
+                                    i = -1;
+                                    break;
+                                }
+                                else{
+                                    System.out.println("Pilihan invalid coba lagi");
+                                }
+                            }                                        
+                        }
+                    }
+                    break;
+                    case 6:                
+                    break;
+                    default:
+                    System.out.println("Pilihan invalid coba lagi");
+                }              
+                    if(pilihan <= 6 && pilihan > 0){
+                        break;
+                    }
                 }
-                break;
-                case 6:                
-                break;
-                default:
-                System.out.println("Pilihan invalid coba lagi");
-            }            
             System.out.flush();                        
             i += 1;            
         }
