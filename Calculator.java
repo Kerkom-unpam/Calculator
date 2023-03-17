@@ -49,6 +49,8 @@ public class Calculator {
                         angka[check+1] = 0;
                         if (operasi[check+1] == 'x' || operasi[check+1] == '÷'){
                             angka[check+1] = angka[check];
+                            angka[check] = 0;
+                            operasi[check] = '+';
                         }
                         else{
                             operasi[check] = '+';
@@ -59,10 +61,12 @@ public class Calculator {
                         angka[check+1] = 0;
                         if (operasi[check+1] == 'x' || operasi[check+1] == '÷'){
                             angka[check+1] = angka[check];
+                            angka[check] = 0;
+                            operasi[check] = '+';
                         }
                         else{
                             operasi[check] = '+';
-                        }
+                        }                    
                     }                                        
                 }
                 for (int check = 0; check <= i; check++){
@@ -76,7 +80,7 @@ public class Calculator {
                         angka[check] = 0;
                         angka[check+1] = hasil;
                     }
-                    if(check == i){
+                    if(check == i){                  
                         System.out.println("hasil = " + angka[check]);
                         for(int clear = 0; clear <= i; clear++){
                             angka[clear] = 0;
@@ -101,6 +105,10 @@ public class Calculator {
                     }
                 }
                 break;
+                case 6:                
+                break;
+                default:
+                System.out.println("Pilihan invalid coba lagi");
             }            
             System.out.flush();                        
             i += 1;            
@@ -108,3 +116,4 @@ public class Calculator {
         System.out.println("Terima kasih sudah menggunakan program ini ");
     }            
 }
+
