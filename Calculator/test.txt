@@ -1,2 +1,0 @@
-decoy
-Folder ini untuk merun project Calculator dengan Netbeans
