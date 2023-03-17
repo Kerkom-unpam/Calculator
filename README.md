@@ -6,7 +6,7 @@ This is a Calculator that run in terminal using Java
 3. type 5 when you want to see the result
 
 if you use Netbeans :
-1. Download this repository
-2. Open Netbeans, Open project
-3. open Calculator folder
-4. run Calculator.java
+1. Create New Project on Netbeans
+2. Name the project Calculator
+3. Download this repo and copy Calculator_Netbeans.java and paste it in mycompany folder 
+4. Run Calculator_Netbeans.java
